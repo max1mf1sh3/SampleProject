@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+    backgroundColor: '#0c1d',
   },
   buttonIcon: {
     paddingRight: 8,

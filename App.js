@@ -12,19 +12,24 @@ const smiling = 'https://media.tenor.com/RpZWhUMEyv8AAAAe/free-smileys-faces-de-
 const beary = 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Ours_brun_parcanimalierpyrenees_1.jpg';
 
 
-function smile() {
-  PlaceholderImageUrl = smiling;
-}
-
-function bear() {
-  PlaceholderImageUrl = beary;
-}
 
 export default function App() {
+  const [selectedImage, setSelectedImage] = useState(PlaceholderImageUrl);
+
+  function smile() {
+    setSelectedImage(smiling);
+    alert("succesfful press");
+  }
+
+  function bear() {
+    setSelectedImage(beary);
+    alert("successfully pressed");
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <ImageViewer placeholderImageSource={PlaceholderImageUrl}></ImageViewer>
+        <ImageViewer placeholderImageSource={selectedImage}></ImageViewer>
       </View>
       <View style={styles.footerContainer}>
           <Button theme="primary" label="smile" onPress={smile} />
@@ -55,3 +60,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+/* TRY THIS OUT?
+function padding(a, b, c, d) {
+  return {
+    paddingTop: a,
+    paddingRight: b !== undefined ? b : a,
+    paddingBottom: c !== undefined ? c : a,
+    paddingLeft: d !== undefined ? d : (b !== undefined ? b : a)
+  }
+}
+*/
